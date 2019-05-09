@@ -14,11 +14,5 @@
         "psr-4": {
             "fooTests\\": "tests/"
         }
-    },
-    "config": {
-        "vendor-dir": "vendor/7_0/",
-        "platform": {
-            "php": "7.0.99"
-        }
     }
 }
