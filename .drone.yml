@@ -3,9 +3,12 @@ kind: pipeline
 name: default
 
 steps:
-- name: frontend
-  image: php
-  commands:
-  - echo "Before script..."
-  - composer install --ignore-platform-reqs
-  - php vendor/bin/phpunit -c phpunit.xml tests/
+  - name: install
+    image: composer
+    commands:
+      - composer install --ignore-platform-reqs
+
+  - name: test
+    image: php:7.2
+    commands:
+      - php vendor/bin/phpunit -c phpunit.xml tests/
