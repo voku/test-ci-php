@@ -1,0 +1,9 @@
+---
+
+language: php
+
+before_script:
+  - echo "Before script..."
+
+script:
+  - php HelloWorld.php
