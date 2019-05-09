@@ -1,6 +1,6 @@
 version: '2'
 services:
-  php7_1:
+  php:
     image: php:7.1
     volumes:
       - .:/opt/project
