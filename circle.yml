@@ -1,5 +1,9 @@
-# circleci.com
-
-test:
-  override:
-    - php vendor/bin/phpunit -c phpunit.xml
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.2
+    steps:
+      - checkout
+      - run: echo "Before script..."
+      - run: php vendor/bin/phpunit -c phpunit.xml tests/
