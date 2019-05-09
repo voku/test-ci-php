@@ -1,0 +1,10 @@
+---
+kind: pipeline
+name: default
+
+steps:
+- name: frontend
+  image: php
+  commands:
+  - echo "Before script..."
+  - php HelloWorld.php
