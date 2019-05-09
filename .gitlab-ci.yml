@@ -2,9 +2,9 @@
 image: php:5.6
 
 before_script:
-- echo "Before script..."
+  - echo "Before script..."
 
 # We test PHP5.6 (the default)
 test:app:
   script:
-  - php HelloWorld.php
+    - php HelloWorld.php
