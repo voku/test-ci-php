@@ -7,12 +7,20 @@ addons:
     packages:
       - docker-ce
 
-install:
-  - composer install --ignore-platform-reqs
+before_install:
+  - docker -v
+  - docker-compose -v
 script:
-  - docker-compose -f docker-compose-php7_1.yml pull
-  - docker-compose -f docker-compose-php7_1.yml run php /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
-  - docker-compose -f docker-compose-php7_2.yml pull
-  - docker-compose -f docker-compose-php7_2.yml run php /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
-  - docker-compose -f docker-compose-php7_3.yml pull
-  - docker-compose -f docker-compose-php7_3.yml run php /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
+  - rm -rf composer.lock; rm -rf vendor/;
+  - docker-compose run composer1_8 composer config platform.php 7.0.99
+  - docker-compose run composer1_8 composer update
+  - docker-compose run php7_0 /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
+  - docker-compose run composer1_8 composer config platform.php 7.1.99
+  - docker-compose run composer1_8 composer update
+  - docker-compose run php7_1 /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
+  - docker-compose run composer1_8 composer config platform.php 7.2.99
+  - docker-compose run composer1_8 composer update
+  - docker-compose run php7_2 /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
+  - docker-compose run composer1_8 composer config platform.php 7.3.99
+  - docker-compose run composer1_8 composer update
+  - docker-compose run php7_3 /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/

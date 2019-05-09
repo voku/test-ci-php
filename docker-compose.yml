@@ -1,0 +1,24 @@
+version: '2'
+services:
+  composer1_8:
+    image: composer:1.8
+    command: install
+    working_dir: /opt/project
+    volumes:
+      - .:/opt/project
+  php7_0:
+    image: php:7.0
+    volumes:
+      - .:/opt/project
+  php7_1:
+    image: php:7.1
+    volumes:
+      - .:/opt/project
+  php7_2:
+    image: php:7.2
+    volumes:
+      - .:/opt/project
+  php7_3:
+    image: php:7.3
+    volumes:
+      - .:/opt/project
