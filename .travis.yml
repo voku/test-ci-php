@@ -10,11 +10,11 @@ addons:
 install:
   - composer install --ignore-platform-reqs
 script:
-  - docker-compose -f docker-compose7_0.yml pull
-  - docker-compose -f docker-compose7_0.yml run php /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
-  - docker-compose -f docker-compose7_1.yml pull
-  - docker-compose -f docker-compose7_1.yml run php /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
-  - docker-compose -f docker-compose7_2.yml pull
-  - docker-compose -f docker-compose7_2.yml run php /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
-  - docker-compose -f docker-compose7_3.yml pull
-  - docker-compose -f docker-compose7_3.yml run php /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
+  - docker-compose -f docker-compose-php7_0.yml pull
+  - docker-compose -f docker-compose-php7_0.yml run php /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
+  - docker-compose -f docker-compose-php7_1.yml pull
+  - docker-compose -f docker-compose-php7_1.yml run php /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
+  - docker-compose -f docker-compose-php7_2.yml pull
+  - docker-compose -f docker-compose-php7_2.yml run php /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
+  - docker-compose -f docker-compose-php7_3.yml pull
+  - docker-compose -f docker-compose-php7_3.yml run php /opt/project/vendor/bin/phpunit -c /opt/project/phpunit.xml /opt/project/tests/
