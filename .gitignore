@@ -4,6 +4,7 @@
 
 # composer
 vendor
+composer.lock
 
 # php (phpunit)
 build/
