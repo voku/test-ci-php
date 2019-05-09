@@ -1,3 +1,5 @@
+# circleci.com
+
 test:
   override:
     - php vendor/bin/phpunit -c phpunit.xml
