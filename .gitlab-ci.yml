@@ -1,10 +1,9 @@
 # Select image from https://hub.docker.com/_/php/
-image: php:5.6
+image: php:7.0
 
 before_script:
   - echo "Before script..."
 
-# We test PHP5.6 (the default)
 test:app:
   script:
-    - php HelloWorld.php
+    - php vendor/bin/phpunit -c phpunit.xml tests/

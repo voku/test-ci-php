@@ -1,0 +1,12 @@
+/nbproject/private/
+
+.idea
+
+# composer
+vendor
+
+# php (phpunit)
+build/
+
+# phpcs fixer
+.php_cs.cache

@@ -1,0 +1,6 @@
+version: '2'
+services:
+  php7_3:
+    image: php:7.3
+    volumes:
+      - .:/opt/project
