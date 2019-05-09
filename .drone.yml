@@ -7,4 +7,5 @@ steps:
   image: php
   commands:
   - echo "Before script..."
-  - php HelloWorld.php
+  - composer install --ignore-platform-reqs
+  - php vendor/bin/phpunit -c phpunit.xml tests/
